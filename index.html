@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Check Your Exams</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Check Your Final Exams at NDU!</h1>
+            <p class="subtitle">Build your exam schedule with ease</p>
+        </header>
+
+        <!-- Toast Notifications -->
+        <div id="toast-notification-right" class="toast toast-right hidden">
+            <span id="toast-message-right"></span>
+        </div>
+
+        <!-- Upload Section -->
+        <div class="card" id="upload-section">
+            <h2 class="card-title">Upload Schedule</h2>
+            <div class="upload-area">
+                <label for="file-upload" class="btn btn-primary">
+                    <span>📁 Choose File</span>
+                </label>
+                <input id="file-upload" type="file" accept=".csv, .xlsx, .xls" />
+                <button id="remove-file-btn" class="btn btn-danger hidden">Remove File</button>
+                <p id="file-name" class="file-name-display">No file selected.</p>
+            </div>
+        </div>
+
+        <!-- Course Search Section -->
+        <div class="card hidden" id="course-section">
+            <h2 class="card-title">Search Courses</h2>
+            <div class="input-group">
+                <input type="text" id="course-input" placeholder="Enter course code (e.g. ABC 123)">
+                <button id="search-course-btn" class="btn btn-primary">Search</button>
+                <button id="clear-all-btn" class="btn btn-secondary">Clear Schedule</button>
+            </div>
+
+            <!-- Search Results Section -->
+            <div id="search-results-container" class="search-results-area hidden">
+                <h3 class="results-title">Select your section:</h3>
+                <div class="table-responsive">
+                    <table id="results-table">
+                        <thead>
+                            <tr>
+                                <th>Course</th>
+                                <th>Section</th>
+                                <th>Instructor</th>
+                                <th>Date & Time</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schedule Section -->
+        <div class="card hidden" id="schedule-section">
+            <h2 class="card-title">Your Schedule</h2>
+            <div class="table-responsive">
+                <table id="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Course</th>
+                            <th>Sec</th>
+                            <th>Title</th>
+                            <th>Instructor</th>
+                            <th>Room</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
